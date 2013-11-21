@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.itg.sensorweb</groupId>
+		<artifactId>sensorweb</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>services</artifactId>
+	<name>Desarrollos para la sensorweb</name>
+	<description>Desarrollos de Itg para la sensorweb</description>
+	<packaging>pom</packaging>
+	<modules>
+		<!--module>rest</module-->
+		<module>helpers</module>
+		<!--module>repositories</module-->
+		<!--module>swe-services</module-->
+	</modules>
+	<properties>
+	<spring.version>3.2.4.RELEASE</spring.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- SPRING DEPENDENCIES -->
+			<!--  For use @Autowire annotation -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!--  For use @Service annotation -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>

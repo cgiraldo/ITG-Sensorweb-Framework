@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.itg.sensorweb</groupId>
+		<artifactId>services</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>helpers</artifactId>
+	<name>Helpers data-model XML</name>
+	<description>Helpers: servicios de transformacion data-model a XML</description>
+	<packaging>pom</packaging>
+	<modules>
+		<module>helper-swecommon-service</module>
+		<!--module>helper-sensorml-service</module-->
+		<!--module>helper-samplingfeature-service</module-->
+		<!--module>helper-om-service</module-->
+		<!--module>helper-ows-service</module-->
+		<!--module>helper-sos-service</module-->
+
+	</modules>
+</project>

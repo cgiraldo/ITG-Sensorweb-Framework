@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>es.itg.sensorweb</groupId>
+		<artifactId>helpers</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>helper-swecommon-service</artifactId>
+	<packaging>bundle</packaging>
+	<dependencies>
+		<!-- DATA MODEL MODULES -->
+		<dependency>
+			<groupId>es.itg.sensorweb</groupId>
+			<artifactId>itg-swecommon</artifactId>
+		</dependency>
+		<!-- XMLBeans Modules -->
+		<dependency>
+			<groupId>es.itg.sensorweb</groupId>
+			<artifactId>ogc-xml-sweCommon-v20</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.itg.sensorweb</groupId>
+			<artifactId>ogc-xml-sweCommon-v101</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>es.itg.sensorweb</groupId>
+			<artifactId>ogc-xml-gml-v321</artifactId>
+		</dependency>
+		<!-- SPRING DEPENDENCIES -->
+			<!--  For use @Autowire annotation -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+			</dependency>
+			<!--  For use @Service annotation -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+			</dependency>
+		<!-- LOGGER DEPENDENCIES -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- JUNIT DEPENDENCIES -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- JACKSON DEPENDENCIES -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+		
+	<build>
+		<plugins>
+			<plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Import-Package>
+                        *
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+</plugins>
+</build>
+</project>

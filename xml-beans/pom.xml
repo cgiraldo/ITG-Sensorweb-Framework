@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>sensorweb</artifactId>
+		<groupId>es.itg.sensorweb</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>xml-beans</artifactId>
+	<name>Desarrollos para la sensorweb</name>
+	<description>Desarrollos de Itg para la sensorweb</description>
+	<packaging>pom</packaging>
+	<modules>
+		<module>ogc-xml-sweCommon-v20</module>
+		<!--module>ogc-xml-sweCommon-v101</module>
+		<module>ogc-xml-gml-v311</module>
+		<module>ogc-xml-gml-v321</module>
+		<module>ogc-xml-sensorML-v101</module>
+		<module>ogc-xml-om-v20</module>
+		<module>ogc-xml-sos-v20</module>
+		<module>ogc-xml-filter-v20</module>
+		<module>ogc-xml-ows-v110</module>
+		<module>ogc-xml-sampling-v20</module>
+		<module>ogc-xml-swes-v20</module>
+		<module>w3c-xml-xlink-v110</module>
+		<module>w3c-xml-ws-addressing-v10</module>
+		<module>oasis-xml-ws-resources-v12</module>
+		<module>oasis-xml-ws-notification-v13</module-->
+	</modules>
+
+      
+          <build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>xmlbeans-maven-plugin</artifactId>
+					<version>2.3.3</version>
+					<executions>
+						<execution>
+							<id>main</id>
+							<goals>
+								<goal>xmlbeans</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<!--
+							xmlbeans plugin only used to generate the classes not for compiling 
+							or jar generation.
+						-->
+						<noJavac>true</noJavac>
+						<memoryInitialSize>256</memoryInitialSize>
+						<memoryMaximumSize>512</memoryMaximumSize>
+						<download>false</download>
+					</configuration>
+				</plugin>
+                 <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <version>2.3.7</version>
+         </plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+</project>
