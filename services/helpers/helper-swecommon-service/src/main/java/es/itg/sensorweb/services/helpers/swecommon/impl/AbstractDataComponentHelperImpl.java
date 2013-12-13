@@ -4,9 +4,13 @@ package es.itg.sensorweb.services.helpers.swecommon.impl;
 import net.opengis.gml.x32.MeasureType;
 import net.opengis.swe.x20.DataArrayPropertyType;
 import net.opengis.swe.x20.DataArrayType;
+import net.opengis.swe.x20.DataChoicePropertyType;
+import net.opengis.swe.x20.DataChoiceType;
 import net.opengis.swe.x20.DataRecordPropertyType;
 import net.opengis.swe.x20.DataRecordType;
 import net.opengis.swe.x20.QuantityType;
+import net.opengis.swe.x20.TextDocument;
+import net.opengis.swe.x20.TextType;
 
 import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
@@ -21,6 +25,7 @@ import es.itg.sensorweb.model.swecommon.DataArray;
 import es.itg.sensorweb.model.swecommon.DataChoice;
 import es.itg.sensorweb.model.swecommon.DataRecord;
 import es.itg.sensorweb.model.swecommon.Quantity;
+import es.itg.sensorweb.model.swecommon.Text;
 
 import es.itg.sensorweb.services.helpers.swecommon.AbstractDataComponentHelperService;
 
@@ -123,9 +128,17 @@ public class AbstractDataComponentHelperImpl implements AbstractDataComponentHel
 			LOGGER.debug("DataArray Type Detected") ;
 			return dataArrayHelper.deserialize(xmlObject);
 		}
+		else if ((xmlObject instanceof TextType)){
+			LOGGER.debug("Text Type Detected") ;
+			return textHelper.deserialize(xmlObject);
+		}
 		else if ((xmlObject instanceof DataRecordPropertyType)||(xmlObject instanceof DataRecordType)){
-			LOGGER.debug("DataArray Type Detected") ;
+			LOGGER.debug("DataRecord Type Detected") ;
 			return dataRecordHelper.deserialize(xmlObject);
+		}
+		else if ((xmlObject instanceof DataChoicePropertyType)||(xmlObject instanceof DataChoiceType)){
+			LOGGER.debug("DataChoice Type Detected") ;
+			return dataChoiceHelper.deserialize(xmlObject);
 		}
 		else {
 			LOGGER.debug("Deserializing of classname " 
@@ -143,13 +156,15 @@ public class AbstractDataComponentHelperImpl implements AbstractDataComponentHel
 		if (absData.getType().equals(Quantity.TYPE)) {
 			return quantityHelper.serializeSwecommon_v20((Quantity)absData);
 		}
+		else if (absData.getType().equals(Text.TYPE)) {
+			return textHelper.serializeSwecommon_v20((Text)absData);
+		}
 		else if (absData.getType().equals(DataArray.TYPE)) {
 			return dataArrayHelper.serializeSwecommon_v20((DataArray)absData);
 		}
 		else if (absData.getType().equals(DataRecord.TYPE)) {
 			return dataRecordHelper.serializeSwecommon_v20((DataRecord)absData);
 		}
-
 		else if (absData.getType().equals(Bool.TYPE)) {
 			return boolHelper.serializeSwecommon_v20((Bool)absData);
 		}
@@ -164,6 +179,9 @@ public class AbstractDataComponentHelperImpl implements AbstractDataComponentHel
 
 		if (absData.getType().equals(Quantity.TYPE)) {
 			return quantityHelper.serializeSwecommon_v20Type((Quantity)absData);
+		}
+		else if (absData.getType().equals(Text.TYPE)) {
+			return textHelper.serializeSwecommon_v20Type((Text)absData);
 		}
 		else if (absData.getType().equals(DataArray.TYPE)) {
 			return dataArrayHelper.serializeSwecommon_v20Type((DataArray)absData);

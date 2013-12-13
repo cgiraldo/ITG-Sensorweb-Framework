@@ -36,6 +36,12 @@
 			<artifactId>jackson-databind</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- JAVA PERSISTENCE DEPENDENCIES -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

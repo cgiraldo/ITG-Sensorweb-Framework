@@ -24,7 +24,10 @@
 package es.itg.sensorweb.model.swecommon;
 
 
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
@@ -33,6 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  */
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.MINIMAL_CLASS, include=JsonTypeInfo.As.PROPERTY, property="type")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class SWEIdentifiable {
   
   /** param id only used as Entity Identification if JPA is used. */
@@ -85,6 +89,7 @@ public abstract class SWEIdentifiable {
    * Set the value of identifier
    * @param newVar the new value of identifier
    */
+  @Id
   public void setIdentifier ( String newVar ) {
     identifier = newVar;
   }
@@ -93,7 +98,7 @@ public abstract class SWEIdentifiable {
    * Get the value of identifier
    * @return the value of identifier
    */
-
+  @Id
   public String getIdentifier ( ) {
     return identifier;
   }
