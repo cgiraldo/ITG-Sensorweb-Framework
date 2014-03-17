@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>es.itg.sensorweb</groupId>
+		<artifactId>xml-beans</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ogc-xml-gml-v311</artifactId>
+	<packaging>bundle</packaging>
+	<name>OGC GML schema (spec. v3.1.1)</name>
+	<dependencies>
+	         <dependency>
+                        <groupId>org.apache.servicemix.bundles</groupId>
+                        <artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
+                </dependency>
+		<dependency>
+			<groupId>es.itg.sensorweb</groupId>
+			<artifactId>w3c-xml-xlink-v110</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xmlbeans-maven-plugin</artifactId>
+				<configuration>
+					<sourceSchemas>
+						<sourceSchema>gml/3.1.1/base/gml.xsd</sourceSchema>
+						<sourceSchema>gml/3.1.1/smil/smil20.xsd</sourceSchema>
+					</sourceSchemas>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                  <Bundle-ContactAddress>cgiraldo@itg.es</Bundle-ContactAddress>
+                  <Bundle-Version>${project.version}</Bundle-Version>
+                  <Export-Package>org.w3.x2001.smil20; version="${project.version}",
+                                  net.opengis.gml; version="${project.version}",
+                                  net.opengis.gml.impl; version="${project.version}"</Export-Package>
+                  <Import-Package>org.apache.xmlbeans.impl.schema;version="[2.5,3)",*</Import-Package>
+               </instructions>
+            </configuration>
+
+			</plugin>
+
+        </plugins>
+    </build>
+</project>

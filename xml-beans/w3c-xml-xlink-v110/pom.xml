@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>es.itg.sensorweb</groupId>
+		<artifactId>xml-beans</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>w3c-xml-xlink-v110</artifactId>
+	<packaging>bundle</packaging>
+	<name>W3C xlink schema (spec. v1.1.0)</name>
+    <dependencies>
+                <dependency>
+                        <groupId>org.apache.servicemix.bundles</groupId>
+                        <artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
+                </dependency>
+        </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xmlbeans-maven-plugin</artifactId>
+				<configuration>
+					<sourceSchemas>
+						<sourceSchema>xlink/1.1/xlink.xsd</sourceSchema>
+					</sourceSchemas>
+				</configuration>
+			</plugin>
+			<plugin>
+		           <groupId>org.apache.felix</groupId>
+            			<artifactId>maven-bundle-plugin</artifactId>
+ 			<extensions>true</extensions>
+            <configuration>
+               <instructions>
+                  <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                  <Bundle-ContactAddress>cgiraldo@itg.es</Bundle-ContactAddress>
+                  <Bundle-Version>${project.version}</Bundle-Version>
+                  <Export-Package>org.w3.x1999.xlink; version="1.0.0-SNAPSHOT"</Export-Package>
+                  <Import-Package>org.apache.xmlbeans.impl.schema;version="[2.5,3)",*</Import-Package>
+               </instructions>
+            </configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

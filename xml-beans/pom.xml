@@ -12,18 +12,18 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>ogc-xml-sweCommon-v20</module>
-		<!--module>ogc-xml-sweCommon-v101</module>
+		<module>ogc-xml-sweCommon-v101</module>
 		<module>ogc-xml-gml-v311</module>
 		<module>ogc-xml-gml-v321</module>
-		<module>ogc-xml-sensorML-v101</module>
+		<!--module>ogc-xml-sensorML-v101</module>
 		<module>ogc-xml-om-v20</module>
 		<module>ogc-xml-sos-v20</module>
 		<module>ogc-xml-filter-v20</module>
 		<module>ogc-xml-ows-v110</module>
 		<module>ogc-xml-sampling-v20</module>
-		<module>ogc-xml-swes-v20</module>
+		<module>ogc-xml-swes-v20</module-->
 		<module>w3c-xml-xlink-v110</module>
-		<module>w3c-xml-ws-addressing-v10</module>
+		<!--module>w3c-xml-ws-addressing-v10</module>
 		<module>oasis-xml-ws-resources-v12</module>
 		<module>oasis-xml-ws-notification-v13</module-->
 	</modules>
