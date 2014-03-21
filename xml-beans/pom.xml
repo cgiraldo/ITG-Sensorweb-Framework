@@ -4,11 +4,10 @@
 	<parent>
 		<artifactId>sensorweb</artifactId>
 		<groupId>es.itg.sensorweb</groupId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>xml-beans</artifactId>
-	<name>Desarrollos para la sensorweb</name>
-	<description>Desarrollos de Itg para la sensorweb</description>
+	<name>Xml-beans for SWE related Standards</name>
 	<packaging>pom</packaging>
 	<modules>
 		<module>ogc-xml-sweCommon-v20</module>
@@ -27,8 +26,13 @@
 		<module>oasis-xml-ws-resources-v12</module>
 		<module>oasis-xml-ws-notification-v13</module-->
 	</modules>
-
-      
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
+			<version>2.6.0_2</version>
+		</dependency>
+         </dependencies>
           <build>
 		<pluginManagement>
 			<plugins>
@@ -66,3 +70,4 @@
 	</build>
 	
 </project>
+

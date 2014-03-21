@@ -5,8 +5,6 @@ import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import es.itg.sensorweb.model.swecommon.AbstractDataComponent;
 import es.itg.sensorweb.model.swecommon.DataRecord;
@@ -17,14 +15,13 @@ import net.opengis.swe.x20.DataRecordType.Field;
 
 
 import net.opengis.swe.x20.DataRecordDocument;
-@Service
+
 public class DataRecordHelperImpl {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DataRecordHelperImpl.class);
-    @Autowired
 	AbstractDataComponentHelperService abstractDataComponentHelper;
 	 
-	 public DataRecordHelperImpl(){
-		 
+	 public DataRecordHelperImpl(AbstractDataComponentHelperService abstractDataComponentHelper){
+		 this.abstractDataComponentHelper = abstractDataComponentHelper;
 	 }
 	
 	 public AbstractDataComponentHelperService getAbstractDataComponentHelper() {

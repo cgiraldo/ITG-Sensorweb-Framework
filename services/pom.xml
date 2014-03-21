@@ -4,11 +4,10 @@
 	<parent>
 		<groupId>es.itg.sensorweb</groupId>
 		<artifactId>sensorweb</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>services</artifactId>
-	<name>Desarrollos para la sensorweb</name>
-	<description>Desarrollos de Itg para la sensorweb</description>
+	<name> Services Related to the ITG-SensorWeb Framework</name>
 	<packaging>pom</packaging>
 	<modules>
 		<!--module>rest</module-->

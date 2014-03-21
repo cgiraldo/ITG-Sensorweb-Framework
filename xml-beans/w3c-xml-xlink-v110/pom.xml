@@ -4,18 +4,12 @@
 	<parent>
 		<groupId>es.itg.sensorweb</groupId>
 		<artifactId>xml-beans</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>w3c-xml-xlink-v110</artifactId>
 	<packaging>bundle</packaging>
 	<name>W3C xlink schema (spec. v1.1.0)</name>
-    <dependencies>
-                <dependency>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
-                </dependency>
-        </dependencies>
 	<build>
 		<plugins>
 			<plugin>

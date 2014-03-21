@@ -40,6 +40,7 @@ public class DataRecord extends AbstractDataComponent {
 	
 	public DataRecord () { 
 		super();
+		identifier="data_record"; //Default identifier
 	}
 
 	public DataRecord (String identifier, String description, String label){

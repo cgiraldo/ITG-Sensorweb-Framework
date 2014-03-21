@@ -44,6 +44,7 @@ public class Time extends AbstractDataComponent {
   
   public Time () { 
 	  super();
+		identifier="time"; //Default identifier
   };
   
   public Time (String identifier, String description, String label){

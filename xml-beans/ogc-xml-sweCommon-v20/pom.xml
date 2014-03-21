@@ -4,17 +4,13 @@
 	<parent>
 		<groupId>es.itg.sensorweb</groupId>
 		<artifactId>xml-beans</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ogc-xml-sweCommon-v20</artifactId>
 	<packaging>bundle</packaging>
 	<name>OGC SWECommon schema (spec. v2.0)</name>
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>es.itg.sensorweb</groupId>
 			<artifactId>w3c-xml-xlink-v110</artifactId>

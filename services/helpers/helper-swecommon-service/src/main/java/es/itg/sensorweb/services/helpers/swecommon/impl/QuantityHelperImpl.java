@@ -4,7 +4,6 @@ package es.itg.sensorweb.services.helpers.swecommon.impl;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 
 import es.itg.sensorweb.model.swecommon.Quantity;
@@ -12,7 +11,7 @@ import net.opengis.gml.x32.MeasureDocument;
 import net.opengis.gml.x32.MeasureType;
 import net.opengis.swe.x20.QuantityType;
 import net.opengis.swe.x20.QuantityDocument;
-@Service
+
 public class QuantityHelperImpl {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDataComponentHelperImpl.class);
@@ -51,6 +50,9 @@ public class QuantityHelperImpl {
 	}
 	protected Quantity deserialize(net.opengis.swe.x101.QuantityDocument.Quantity quantity_xb){
 		Quantity quantity = new Quantity();
+		if (quantity_xb.isSetDefinition()){
+			quantity.setDefinition(quantity_xb.getDefinition());
+		}
 		quantity.setUom(quantity_xb.getUom().getCode());
 		if (quantity_xb.isSetValue()) {
 			quantity.setValue(quantity_xb.getValue());

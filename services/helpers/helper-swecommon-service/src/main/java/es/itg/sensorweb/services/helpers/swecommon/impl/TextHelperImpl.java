@@ -6,13 +6,11 @@ import net.opengis.swe.x20.TextType;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 import es.itg.sensorweb.model.swecommon.AllowedTokens;
 
 import es.itg.sensorweb.model.swecommon.Text;
 
-@Service
 public class TextHelperImpl {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDataComponentHelperImpl.class);
 

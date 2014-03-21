@@ -39,6 +39,7 @@ public class DataChoice extends AbstractDataComponent {
 
 	public DataChoice () { 
 		super();
+		identifier="data_choice"; //Default identifier
 	}
 
 	public DataChoice (String identifier, String description, String label){

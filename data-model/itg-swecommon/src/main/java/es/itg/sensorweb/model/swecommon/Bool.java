@@ -40,6 +40,7 @@ public class Bool extends AbstractDataComponent {
   
   public Bool () { 
 	  super();
+		identifier="boolean"; //Default identifier
   };
   
   public Bool (String identifier, String description, String label){

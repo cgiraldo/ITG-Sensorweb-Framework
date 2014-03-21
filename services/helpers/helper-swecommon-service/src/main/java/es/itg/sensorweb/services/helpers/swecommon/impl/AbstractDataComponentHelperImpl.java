@@ -9,14 +9,12 @@ import net.opengis.swe.x20.DataChoiceType;
 import net.opengis.swe.x20.DataRecordPropertyType;
 import net.opengis.swe.x20.DataRecordType;
 import net.opengis.swe.x20.QuantityType;
-import net.opengis.swe.x20.TextDocument;
 import net.opengis.swe.x20.TextType;
 
 import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import es.itg.sensorweb.model.swecommon.AbstractDataComponent;
@@ -33,86 +31,32 @@ import es.itg.sensorweb.services.helpers.swecommon.AbstractDataComponentHelperSe
 public class AbstractDataComponentHelperImpl implements AbstractDataComponentHelperService{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDataComponentHelperImpl.class);
-	@Autowired
+
 	BoolHelperImpl boolHelper;
-	@Autowired
+
 	DataArrayHelperImpl dataArrayHelper;
-	@Autowired
+
 	DataChoiceHelperImpl dataChoiceHelper;
-	@Autowired
+
 	DataRecordHelperImpl dataRecordHelper;
-	@Autowired
+
 	QuantityHelperImpl quantityHelper;
-	@Autowired
+
 	TextHelperImpl textHelper;
 
 	public AbstractDataComponentHelperImpl(){
+		boolHelper = new BoolHelperImpl();
+		dataArrayHelper = new DataArrayHelperImpl(this);
+		dataChoiceHelper = new DataChoiceHelperImpl(this);
+		dataRecordHelper = new DataRecordHelperImpl(this);
+		quantityHelper = new QuantityHelperImpl();
+		textHelper = new TextHelperImpl();
 	};
 
 
 	//////////////////////////////
 	// XML Deserialize
 	//////////////////////////////
-
-	public BoolHelperImpl getBoolHelper() {
-		return boolHelper;
-	}
-
-
-	public void setBoolHelper(BoolHelperImpl boolHelper) {
-		this.boolHelper = boolHelper;
-	}
-
-
-	public DataArrayHelperImpl getDataArrayHelper() {
-		return dataArrayHelper;
-	}
-
-
-	public void setDataArrayHelper(DataArrayHelperImpl dataArrayHelper) {
-		this.dataArrayHelper = dataArrayHelper;
-	}
-
-
-	public DataChoiceHelperImpl getDataChoiceHelper() {
-		return dataChoiceHelper;
-	}
-
-
-	public void setDataChoiceHelper(DataChoiceHelperImpl dataChoiceHelper) {
-		this.dataChoiceHelper = dataChoiceHelper;
-	}
-
-
-	public DataRecordHelperImpl getDataRecordHelper() {
-		return dataRecordHelper;
-	}
-
-
-	public void setDataRecordHelper(DataRecordHelperImpl dataRecordHelper) {
-		this.dataRecordHelper = dataRecordHelper;
-	}
-
-
-	public QuantityHelperImpl getQuantityHelper() {
-		return quantityHelper;
-	}
-
-
-	public void setQuantityHelper(QuantityHelperImpl quantityHelper) {
-		this.quantityHelper = quantityHelper;
-	}
-
-
-	public TextHelperImpl getTextHelper() {
-		return textHelper;
-	}
-
-
-	public void setTextHelper(TextHelperImpl textHelper) {
-		this.textHelper = textHelper;
-	}
-
 
 	public AbstractDataComponent deserialize(XmlObject xmlObject) throws XmlException{
 		LOGGER.debug("deserializing AbstractDataComponent: "+xmlObject.toString());

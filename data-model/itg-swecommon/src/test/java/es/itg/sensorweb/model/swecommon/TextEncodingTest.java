@@ -65,5 +65,11 @@ public class TextEncodingTest {
 	    	System.out.println("ChoiceTextEncoded: "+ dataChoice.getTextEncodedValue("@","!!#"));
 	    	assertEquals(dataChoice.getTextEncodedValue("@","!!#"),"text_id!!#testText");  	
 	    	
+	    	DataArray dataArray = new DataArray();
+	    	dataArray.setBlockSeparator(";");
+	    	dataArray.setTokenSeparator(",");
+	    	dataArray.setTextEncodedResult("11,aa;22,bb;33,cc;44,dd;55,ee;66,ff");
+	    	System.out.println(dataArray.getTextEncodedValue("@", "!"));
+	    	
   }  
 }

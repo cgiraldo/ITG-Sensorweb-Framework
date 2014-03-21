@@ -7,8 +7,6 @@ import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import es.itg.sensorweb.model.swecommon.DataArray;
 import es.itg.sensorweb.services.helpers.swecommon.AbstractDataComponentHelperService;
@@ -20,27 +18,18 @@ import net.opengis.swe.x20.DataArrayType;
 import net.opengis.swe.x20.TextEncodingType;
 
 import net.opengis.swe.x20.DataArrayDocument;
-@Service
+
+
 public class DataArrayHelperImpl {
 	
 	 private static final Logger LOGGER = LoggerFactory.getLogger(DataArrayHelperImpl.class);
-     @Autowired
 	 AbstractDataComponentHelperService abstractDataComponentHelper;
 	 
-	 public DataArrayHelperImpl(){
-		 
+	 public DataArrayHelperImpl(AbstractDataComponentHelperService abstractDataComponentHelper){
+		 this.abstractDataComponentHelper=abstractDataComponentHelper;
 	 }
-	
-	 public AbstractDataComponentHelperService getAbstractDataComponentHelper() {
-		return abstractDataComponentHelper;
-	}
 
-	public void setAbstractDataComponentHelper(
-			AbstractDataComponentHelperService abstractDataComponentHelper) {
-		this.abstractDataComponentHelper = abstractDataComponentHelper;
-	}
-
-    /////////////////////////////
+    ////////////////////////////
     //XML Deserialize
     /////////////////////////////
 	public DataArray deserialize(XmlObject xmlObject) throws XmlException{
@@ -95,6 +84,7 @@ public class DataArrayHelperImpl {
 		 array_xb.addNewElementCount().addNewCount().setValue(dataArray.getElementCount());
 		 array_xb.addNewElementType().setName(dataArray.getElementType().getIdentifier());
 		 array_xb.getElementType().set(abstractDataComponentHelper.serializeSwecommon_v20(dataArray.getElementType()));
+		 array_xb.getElementType().setName(dataArray.getElementType().getIdentifier());
 		
 		
 		TextEncodingType textEncoding_xb = (TextEncodingType)array_xb.addNewEncoding().addNewAbstractEncoding()

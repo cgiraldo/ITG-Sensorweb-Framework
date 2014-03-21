@@ -40,6 +40,7 @@ public class Text extends AbstractDataComponent {
 
 	public Text () { 
 		super();
+		identifier="text"; //Default identifier
 	};
 
 	public Text (String identifier, String description, String label){

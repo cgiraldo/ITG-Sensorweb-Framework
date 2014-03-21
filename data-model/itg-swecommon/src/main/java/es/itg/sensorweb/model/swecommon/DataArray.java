@@ -52,6 +52,7 @@ public class DataArray extends AbstractDataComponent {
 	
 	public DataArray () { 
 		super();
+		identifier="data_array"; //Default identifier
 	}
 
 	public DataArray (String identifier, String description, String label){
@@ -130,6 +131,8 @@ public class DataArray extends AbstractDataComponent {
 		while(matcher.find()) {
 			matcher.appendReplacement(sb, separators.get(matcher.group(1)));
 		}
+		int last_index = this.textEncodedResult.lastIndexOf(this.tokenSeparator);
+		sb.append(this.textEncodedResult.substring(last_index+1));
 		return sb.toString();
 	}
 

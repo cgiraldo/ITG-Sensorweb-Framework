@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>es.itg.sensorweb</groupId>
 		<artifactId>data-model</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>itg-swecommon</artifactId>
 	<packaging>bundle</packaging>

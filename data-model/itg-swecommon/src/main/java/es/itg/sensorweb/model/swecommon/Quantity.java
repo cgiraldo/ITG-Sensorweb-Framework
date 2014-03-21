@@ -44,10 +44,17 @@ public class Quantity extends AbstractDataComponent {
   
   public Quantity () { 
 	  super();
+		identifier="quantity"; //Default identifier
+
   };
   
   public Quantity (String identifier, String description, String label){
 	  super(identifier,description,label);
+  }
+  
+  public Quantity (Double value, String uom){
+	  this.value =value;
+	  this.uom = uom;
   }
   /**
    * Set the value of value

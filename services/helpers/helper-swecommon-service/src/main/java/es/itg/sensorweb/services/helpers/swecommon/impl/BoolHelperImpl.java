@@ -4,14 +4,13 @@ package es.itg.sensorweb.services.helpers.swecommon.impl;
 import org.apache.xmlbeans.XmlObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 
 import es.itg.sensorweb.model.swecommon.Bool;
 import net.opengis.swe.x20.BooleanDocument;
 import net.opengis.swe.x20.BooleanType;
 
-@Service
+
 public class BoolHelperImpl {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDataComponentHelperImpl.class);

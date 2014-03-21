@@ -35,6 +35,7 @@ public class ObservableProperty extends SWEIdentifiable {
 
   public ObservableProperty () {
 	  super();
+		identifier="observableProperty"; //Default identifier
   }
 
   public ObservableProperty(String identifier, String description, String label){

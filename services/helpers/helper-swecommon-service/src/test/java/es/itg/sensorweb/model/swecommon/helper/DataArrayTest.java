@@ -44,16 +44,7 @@ public class DataArrayTest {
 		mapper.setSerializationInclusion(Include.NON_NULL);	
 		//When using the library, this part will be done by the Dependency Injector
 		helper = new AbstractDataComponentHelperImpl();
-		helper.setBoolHelper(new BoolHelperImpl());
-		helper.setQuantityHelper(new QuantityHelperImpl());
-		helper.setTextHelper(new TextHelperImpl());
-		helper.setDataArrayHelper(new DataArrayHelperImpl());
-		helper.getDataArrayHelper().setAbstractDataComponentHelper(helper);
-		helper.setDataRecordHelper(new DataRecordHelperImpl());
-		helper.getDataRecordHelper().setAbstractDataComponentHelper(helper);
-		helper.setDataChoiceHelper(new DataChoiceHelperImpl());
-		helper.getDataChoiceHelper().setAbstractDataComponentHelper(helper);
-		
+	
 		
 		AbstractDataComponent fields[] = new AbstractDataComponent[2];
 		Quantity deep = new Quantity();
